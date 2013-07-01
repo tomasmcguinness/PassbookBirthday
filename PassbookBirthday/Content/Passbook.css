@@ -1,0 +1,80 @@
+﻿.pass {
+    border-radius: 10px;
+    width: 280px;
+    height: 400px;
+    position: relative;
+    border: 1px solid #EEE;
+    background-image: url(/img/balloons.jpg);
+}
+
+    .pass .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .pass .title {
+        position: absolute;
+        top: 12px;
+        left: 50px;
+        font-weight: bold;
+    }
+
+    .pass .strip {
+        position: absolute;
+        top: 50px;
+        left: 0px;
+    }
+
+        .pass .strip img {
+            height: 120px;
+            width: 280px;
+        }
+
+    .pass .primary {
+        position: absolute;
+        top: 60px;
+        left: 10px;
+    }
+
+        .pass .primary .discount {
+            font-size: 50px;
+            line-height: 50px;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+        .pass .primary .description {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    .pass .secondary {
+        position: absolute;
+        top: 180px;
+        left: 10px;
+    }
+
+    .pass .barcode {
+        position: absolute;
+        top: 280px;
+        left: 20px;
+        padding: 10px;
+        background-color: #FFF;
+        border-radius: 5px;
+    }
+
+        .pass .barcode img {
+            width: 220px;
+        }
+
+.field label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.field span {
+    font-size: 18px;
+    font-weight: bold;
+}
