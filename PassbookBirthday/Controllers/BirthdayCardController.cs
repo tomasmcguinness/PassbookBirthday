@@ -23,6 +23,8 @@ namespace PassbookBirthday.Controllers
         [HttpPost]
         public ActionResult Create(BirthdayCardModel card)
         {
+            // Create a new pass and email it.
+            //
             return View();
         }
     }
