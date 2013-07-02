@@ -23,9 +23,13 @@ namespace PassbookBirthday.Controllers
         [HttpPost]
         public ActionResult Create(BirthdayCardModel card)
         {
-            // Create a new pass and email it.
-            //
-            return View();
+            using (HttpClientHandler handler = new HttpClientHandler() { Credentials = new NetworkCredential() })
+            {
+                HttpClient client = new HttpClient(handler);
+                // Create a new pass and email it.
+                //
+                return View();
+            }
         }
     }
 }
