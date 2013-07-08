@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace PassbookBirthday.Controllers
 {
-    public class BirthdayCardController : Controller
+    public class SurpriseController : Controller
     {
         public ActionResult Index()
         {
@@ -23,7 +23,7 @@ namespace PassbookBirthday.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(BirthdayCardModel card)
+        public async Task<ActionResult> Create(SurpriseModel card)
         {
             using (HttpClientHandler handler = new HttpClientHandler() { Credentials = new NetworkCredential() })
             {

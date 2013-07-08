@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Passbook.css" rel="stylesheet" />
+<h2>Create a New Surprise Card</h2>
+<p>
+    You start by creating an empty surprise card. Once the card has been installed by its recipient you will be able to update the card giving away more information
+    about your surprise.
+</p>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="span8">
+            <label>Who is the surprise for?</label>
+            <input name="name" type="text" placeholder="your loved one's name" class="input-xxlarge" />
+            <label>What is the greeting?</label>
+            <input name="title" type="text" placeholder="e.g. Happy Birthday My Love" class="input-xxlarge" />
+            <hr />
+            <label>Sign the surprise</label>
+            <input name="signature_line_1" type="text" placeholder="e.g. Lots of Love" class="input-xxlarge" /><br />
+            <input name="signature_line_2" type="text" placeholder="your own name e.g. Tom xxx" class="input-xxlarge" />
+            <hr />
+            <label>Where should we sent the pass?</label>
+            <input name="email_address" type="text" placeholder="loved_one@company.com" class="input-xxlarge" />
+            <br />
+            <br />
+            <button class="btn btn-success"><i class="icon-plus"></i>&nbsp;Send the Surprise</button>
+        </div>
+        <div class="span3">
+            <div class="pass">
+                <div class="logo">Happy Birthday Chetna</div>
+                <div class="strip">
+                    <img src="~/img/Red_ribbon_strip.png" />
+                </div>
+                <div class="secondary">
+                    <div class="field">
+                        <label>Lots of Love</label>
+                        <span>Tom xxx</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+</script>

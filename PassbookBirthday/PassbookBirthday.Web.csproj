@@ -166,8 +166,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Models\BirthdayCardModel.cs" />
-    <Compile Include="Controllers\BirthdayCardController.cs" />
+    <Compile Include="Models\SurpriseModel.cs" />
+    <Compile Include="Controllers\SurpriseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +247,10 @@
     <Content Include="img\balloons.jpg" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\Red_ribbon.jpg" />
+    <Content Include="img\Red_ribbon_background.png" />
+    <Content Include="img\Red_ribbon_icon.png" />
+    <Content Include="img\Red_ribbon_strip.png" />
     <Content Include="img\surprise.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -292,7 +296,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\BirthdayCard\Create.cshtml" />
+    <Content Include="Views\Surprise\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
