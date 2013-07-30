@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/Passbook.css" rel="stylesheet" />
-<h2>Create a New Surprise Card</h2>
+<h2>Create a New Surprise</h2>
 <p>
     You start by creating an empty surprise card. Once the card has been installed by its recipient you will be able to update the card giving away more information
     about your surprise.
@@ -15,34 +15,48 @@
             <label>Who is the surprise for?</label>
             <input name="name" type="text" placeholder="your loved one's name" class="input-xxlarge" />
             <label>What is the greeting?</label>
-            <input name="title" type="text" placeholder="e.g. Happy Birthday My Love" class="input-xxlarge" />
+            <input name="title" type="text" placeholder="e.g. Happy Birthday My Love" class="input-xxlarge" data-bind="value: greeting, valueUpdate:'afterkeypress'" />
             <hr />
             <label>Sign the surprise</label>
-            <input name="signature_line_1" type="text" placeholder="e.g. Lots of Love" class="input-xxlarge" /><br />
-            <input name="signature_line_2" type="text" placeholder="your own name e.g. Tom xxx" class="input-xxlarge" />
+            <input name="signature_line_one" type="text" placeholder="e.g. Lots of Love" class="input-xxlarge" data-bind="value: signatureLineOne, valueUpdate:'afterkeypress'" /><br />
+            <input name="signature_line_two" type="text" placeholder="your own name e.g. Tom xxx" class="input-xxlarge" data-bind="value: signatureLineTwo, valueUpdate:'afterkeypress'" />
             <hr />
             <label>Where should we sent the pass?</label>
             <input name="email_address" type="text" placeholder="loved_one@company.com" class="input-xxlarge" />
             <br />
             <br />
-            <button class="btn btn-success"><i class="icon-plus"></i>&nbsp;Send the Surprise</button>
+            <button class="btn btn-success"><i class="icon-envelope-alt"></i>&nbsp;Send the Surprise</button>
         </div>
         <div class="span3">
             <div class="pass">
-                <div class="logo">Happy Birthday Chetna</div>
+                <div class="logo"><span data-bind="text: greeting"></span></div>
                 <div class="strip">
                     <img src="~/img/Red_ribbon_strip.png" />
                 </div>
                 <div class="secondary">
                     <div class="field">
-                        <label>Lots of Love</label>
-                        <span>Tom xxx</span>
+                        <span data-bind="text:signatureLineOne"></span>
+                        <br />
+                        <span data-bind="text:signatureLineTwo"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 }
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/knockout-2.3.0.js"></script>
 <script type="text/javascript">
+    var model = new createModel();
 
+    function createModel() {
+        var self = this;
+
+        self.to = ko.observable();
+        self.greeting = ko.observable();
+        self.signatureLineOne = ko.observable();
+        self.signatureLineTwo = ko.observable();
+    }
+
+    $().ready(function () { ko.applyBindings(model); });
 </script>

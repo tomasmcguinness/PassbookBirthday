@@ -1,0 +1,80 @@
+@model PassbookBirthday.Models.SurpriseModel
+@{
+    ViewBag.Title = "Manage";
+}
+<link href="~/Content/Passbook.css" rel="stylesheet" />
+<h2>Manage the Surprise<button class="btn btn-danger pull-right">Delete this Surprise</button></h2>
+<p>Here you can view and update your surprises</p>
+<hr />
+<div class="row">
+    <div class="span3">
+        <h4>The current pass</h4>
+        <div class="pass">
+            <div class="logo"><span>@Model.Greeting</span></div>
+            <div class="strip">
+                <img src="~/img/Red_ribbon_strip.png" />
+            </div>
+            <div class="secondary">
+                <div class="field">
+                    <span data-bind="text:signatureLineOne"></span>
+                    <br />
+                    <span data-bind="text:signatureLineTwo"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span6">
+        <h4>Update the Card</h4>
+        <p>Update the body of the card to send teasers and to eventually reveal your surprise!</p>
+        <hr />
+        <label>Use the greeting to give a clue</label>
+        <input name="title" type="text" placeholder="e.g. Happy Birthday My Love" class="input-xxlarge" data-bind="value: greeting, valueUpdate:'afterkeypress'" />
+        <hr />
+        <label>Use the signature to give a clue</label>
+        <input name="signature_line_1" type="text" placeholder="e.g. Lots of Love" class="input-xxlarge" data-bind="value: signatureLineOne, valueUpdate:'afterkeypress'" /><br />
+        <input name="signature_line_2" type="text" placeholder="your own name e.g. Tom xxx" class="input-xxlarge" data-bind="value: signatureLineTwo, valueUpdate:'afterkeypress'" />
+    </div>
+    <div class="span3">
+        <h4>The updated pass</h4>
+        <div class="pass">
+            <div class="logo"><span data-bind="text: greeting"></span></div>
+            <div class="strip">
+                <img src="~/img/Red_ribbon_strip.png" />
+            </div>
+            <div class="secondary">
+                <div class="field">
+                    <span data-bind="text:signatureLineOne"></span>
+                    <br />
+                    <span data-bind="text:signatureLineTwo"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <i>Last updated 10/10/2013</i>
+    </div>
+    <div class="span6">
+        <button class="btn btn-success pull-right">Send Update</button>
+    </div>
+    <div class="span3">
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/knockout-2.3.0.js"></script>
+<script type="text/javascript">
+    var model = new createModel();
+
+    function createModel() {
+        var self = this;
+
+        self.to = ko.observable();
+        self.greeting = ko.observable('@Model.Greeting');
+        self.signatureLineOne = ko.observable('@Model.SignatureLineOne');
+        self.signatureLineTwo = ko.observable('@Model.signatureLineTwo');
+    }
+
+    $().ready(function () { ko.applyBindings(model); });
+</script>
